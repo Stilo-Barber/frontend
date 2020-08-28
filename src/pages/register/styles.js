@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import { TextField, Button } from "@material-ui/core";
 
-export const Logo = styled.img`
-  margin: 0 auto 60px auto;
-`;
-
 export const Main = styled.div`
   height: 100vh;
   width: 100%;
