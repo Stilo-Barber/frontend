@@ -29,7 +29,7 @@
     "sweetalert2": "^9.17.1"
   },
   "scripts": {
-    "start": "react-scripts build && node index.js",
+    "start": "yarn install && react-scripts build && node index.js",
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
