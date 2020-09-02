@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Body = styled.div`
   padding: 10px;
-  width: 100%;
   color: #a1a1a1;
 `;
 
