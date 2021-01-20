@@ -101,14 +101,6 @@ const AddBarber = ({ open, close, data }) => {
       }
   ]);
 
-  // useEffect(() => {
-  //   if (data){
-  //     dispatch(getScheduleInRequest(token, data.id));
-  //     setScheduleInfo(...schedule.data)
-  //   }
-  //   console.log(scheduleInfo, schedule, data.id)
-  // }, []);
-
   useMemo(() => {
     dispatch(getServicesInRequest(token));
     if (data){
@@ -120,7 +112,6 @@ const AddBarber = ({ open, close, data }) => {
   useEffect(() => {
     if (data){
       const formattedScheduleData = schedule.data.map(x => { return {...x, from: new Date(new Date().setHours(...x.from.split(":"))), to: new Date(new Date().setHours(...x.to.split(":")))}})
-      console.log(formattedScheduleData)
       setScheduleInfo(formattedScheduleData)
     }
 
@@ -130,10 +121,6 @@ const AddBarber = ({ open, close, data }) => {
     setServicesInfo(barbersServices.data.map(bs => bs.serviceId))
   }, [barbersServices]);
 
-  useEffect(() => {
-    console.log(scheduleInfo)
-
-  }, [scheduleInfo]);
 
   function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -180,12 +167,10 @@ const AddBarber = ({ open, close, data }) => {
           headers: { Authorization: `Bearer ${token}` },
         });
 
-        console.log("here", newBarberId.data[0])
 
 
         const newSchedule = scheduleInfo.map(x => {return {...x, barberId: newBarberId.data[0], from: x.from.toLocaleTimeString(), to: x.to.toLocaleTimeString()}})
-        console.log("newSchedule", newSchedule)
-        console.log("there")
+
 
 
         await api.post(`/schedule`, newSchedule, {
@@ -201,7 +186,6 @@ const AddBarber = ({ open, close, data }) => {
           }
         })
 
-        console.log(newBarberServices)
 
         await api.post(`/barbers/services`, newBarberServices, {
           headers: { Authorization: `Bearer ${token}` },
@@ -228,8 +212,6 @@ const AddBarber = ({ open, close, data }) => {
         });
 
         const newSchedule = scheduleInfo.map(x => {return {...x, from: x.from.toLocaleTimeString(), to: x.to.toLocaleTimeString()}})
-        console.log("newSchedule", newSchedule)
-        console.log("there")
 
         await api.put(`/schedule/all/${data.id}`, newSchedule, {
           headers: { Authorization: `Bearer ${token}` },
@@ -255,7 +237,6 @@ const AddBarber = ({ open, close, data }) => {
   };
 
   const changeBarbersServices = (id) => {
-    console.log("id", id)
     if(servicesInfo.includes(id)) {
       setServicesInfo([...servicesInfo.filter(service => service !== id)])
     } else {
@@ -326,7 +307,6 @@ const AddBarber = ({ open, close, data }) => {
                   <TimePicker
                       name="0.from"
                       value={scheduleInfo[0].from} 
-                      //onChange={(date) => setScheduleInfo([...scheduleInfo.splice(0,1,{...scheduleInfo[0], from: date })])}
                       onChange={(date) => setScheduleInfo([{...scheduleInfo[0], from: date }, ...scheduleInfo.slice(1)])}
                       refInput={register({ required: true })}/>
                 </Grid>
@@ -334,7 +314,6 @@ const AddBarber = ({ open, close, data }) => {
                   <TimePicker
                       name="0.to"
                       value={scheduleInfo[0].to} 
-                      // onChange={(ev) => setScheduleInfo([ ...scheduleInfo, scheduleInfo[0] = {...scheduleInfo[0], from: ev.target.value } ])}
                       onChange={(date) => setScheduleInfo([{...scheduleInfo[0], to: date }, ...scheduleInfo.slice(1)])}
                       refInput={register({ required: true })}/>
                 </Grid>
@@ -487,24 +466,7 @@ const AddBarber = ({ open, close, data }) => {
                   onChangeRowsPerPage={handleChangeRowsPerPage}
                 />
               </Grid>
-              {/* <Card>
-                
-              </Card> */}
-              {/* {schedule.loading && <h1>teste</h1>}
-            </Grid>
-            <Grid container spacing={2}>
-            
-            
-                {schedule.loading && <h1>teste</h1>}
-                {!schedule.loading && console.log("2", scheduleInfo, schedule, data.id, state) && (
-                <Grid item xs={12} md={3} lg={3}>
-                <Checkbox />
-                
 
-                </MuiPickersUtilsProvider>
-                
-              </Grid>
-              )} */}
             </Grid>
             <FooterAdd>
               <WidthBtn>

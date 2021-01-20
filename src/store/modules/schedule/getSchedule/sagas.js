@@ -14,14 +14,10 @@ function* getSchedule({ payload }) {
       },
     });
 
-    console.log("response", response)
-
 
     const schedule = {
       schedule: response.data,
     };
-
-    console.log("teste", schedule)
 
     yield put(getScheduleInSuccess(response.data.token, schedule));
   } catch (error) {

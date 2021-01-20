@@ -25,7 +25,7 @@ const Menu = () => (
     <Redirect to="/admin/appointments">
       <OptionMenu>
         <AppointmentIcon />
-        <TextMenu>Solicitações</TextMenu>
+        <TextMenu>Agendamento</TextMenu>
       </OptionMenu>
     </Redirect>
 

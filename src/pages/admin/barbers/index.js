@@ -90,7 +90,6 @@ const Barbers = () => {
 
   useMemo(() => {
     dispatch(getBarbersInRequest(token));
-    console.log("eee", barbers)
   }, []);
 
   const openEditBarber = (data) => {
@@ -164,7 +163,6 @@ const Barbers = () => {
           onChangePage={handleChangePage}
           onChangeRowsPerPage={handleChangeRowsPerPage}
         />
-        {console.log("dx", barbers.lenght, barbers)}
       </Card>
       </Body>
       {newBarber && <AddBarber open={newBarber} close={closeNewBarber} />}

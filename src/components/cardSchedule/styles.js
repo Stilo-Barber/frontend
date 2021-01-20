@@ -13,6 +13,32 @@ export const Body = styled.div`
   padding: 10px 10px 10px 10px;
 `;
 
+export const ConfirmationScreen = styled.div`
+  background: rgb(29, 29, 29);
+  background: linear-gradient(
+    117deg,
+    rgba(29, 29, 29, 1) 0%,
+    rgba(66, 62, 63, 1) 100%
+  );
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    margin: auto;
+    font-weight: bold;
+    color: #fff;
+  }
+`;
+
+
+
 export const Title = styled.p`
   font-weight: bold;
   color: #000;

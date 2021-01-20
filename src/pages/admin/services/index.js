@@ -89,7 +89,6 @@ const Services = () => {
 
   useMemo(() => {
     dispatch(getServicesInRequest(token));
-    console.log("fff", services)
   }, []);
 
   const openEditService = (data) => {

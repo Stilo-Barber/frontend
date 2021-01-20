@@ -14,8 +14,6 @@ function* getBarbersServices({ payload }) {
       },
     });
     
-    console.log("foi", response)
-
     const barbersServices = {
       barbersServices: response.data,
     };

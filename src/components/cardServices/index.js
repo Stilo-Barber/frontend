@@ -11,7 +11,7 @@ import Loading from "../../components/loading"
 
 
 
-const CardServices = ({ open, close, barberId }) => {
+const CardServices = ({ open, close, barber }) => {
   const [openSchedule, setOpenSchedule] = useState(false);
   const [currentService, setCurrentService] = useState(0)
 
@@ -20,8 +20,8 @@ const CardServices = ({ open, close, barberId }) => {
   const barbersServices = useSelector((state) => state.barbersServices);
 
   useMemo(() => {
-    dispatch(getBarbersServicesInRequest(token, barberId));
-  }, [barberId]);
+    dispatch(getBarbersServicesInRequest(token, barber.id));
+  }, [barber.id]);
 
   return (
     <Slide direction="up" in={open} mountOnEnter unmountOnExit>
@@ -44,7 +44,7 @@ const CardServices = ({ open, close, barberId }) => {
           </RadioGroup>
           <Btn onClick={() => setOpenSchedule(true)}>Ver horários</Btn>
           <Close onClick={close}>Fechar</Close>
-          <CardSchedule barberId={barberId} service={barbersServices.data.find(service => service.id == currentService)} open={openSchedule} close={() => setOpenSchedule(false)} />
+          <CardSchedule barber={barber} service={barbersServices.data.find(service => service.id == currentService)} open={openSchedule} close={() => setOpenSchedule(false)} />
           </>
         )}
       </Body>

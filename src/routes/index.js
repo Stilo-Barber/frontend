@@ -7,6 +7,7 @@ import Register from "../pages/register";
 import Admin from "../pages/admin";
 import Barbers from "../pages/admin/barbers";
 import Services from "../pages/admin/services";
+import Appointments from "../pages/admin/appointments";
 
 
 
@@ -19,6 +20,7 @@ const Routes = () => {
       <Route path="/admin" component={Admin} isProtected isAdminProtected exact />
       <Route path="/admin/barbers" component={Barbers} isProtected isAdminProtected />
       <Route path="/admin/services" component={Services} isProtected isAdminProtected />
+      <Route path="/admin/appointments" component={Appointments} isProtected isAdminProtected />
     </Switch>
   );
 };
