@@ -15,6 +15,7 @@ export default function user(state = INITIAL_STATE, action) {
         draft.id = payload.user.id;
         draft.name = payload.user.name;
         draft.email = payload.user.email;
+        draft.admin = payload.user.admin;
         break;
       }
 
@@ -22,6 +23,7 @@ export default function user(state = INITIAL_STATE, action) {
         draft.id = null;
         draft.name = null;
         draft.email = null;
+        draft.admin = null;
         break;
       }
 

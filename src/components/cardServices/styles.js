@@ -8,7 +8,8 @@ export const Body = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  height: 470px;
+  //height: 470px;
+  height: 100%;
   padding: 10px;
 `;
 
