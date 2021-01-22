@@ -28,7 +28,7 @@ const ICONHEADER = `
 `;
 
 const ICONMENU = `
-  color: #a1a1a1 !important;
+  color: #fff !important;
   text-align: center !important;
   margin: 0 auto !important;
   font-size: 4vh !important;

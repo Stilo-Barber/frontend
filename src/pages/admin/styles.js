@@ -6,7 +6,7 @@ export const Body = styled.div`
 `;
 
 export const Welcome = styled.p`
-  color: #a1a1a1;
+  color: #fff;
   font-weight: bold;
   font-size: 19px;
 `;

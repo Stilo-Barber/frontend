@@ -16,7 +16,7 @@ import { getScheduleInRequest } from '../../store/modules/schedule/getSchedule/a
 import { getAppointmentsInRequest } from '../../store/modules/appointments/getAppointments/actions';
 import createTimeSlots from "../../utils/createTimeSlots"
 import { Body, ConfirmationScreen, Title, Flex, Text, Value, Line, Btn, Close, TimeBlock, TimeDiv } from "./styles";
-import { Slide, RadioGroup, Select } from "@material-ui/core";
+import { Slide, RadioGroup, FormControl, InputLabel, Select } from "@material-ui/core";
 
 
 
@@ -144,12 +144,12 @@ const CardSchedule = ({ open, close, barber, service }) => {
         <MuiPickersUtilsProvider utils={DateFnsUtils} locale={ptBrLocale}>
 
 
-      <Grid container justify="space-around">
+      <Grid container justify="space-around" direction="column" lg={4} md={6} sm={8} xs={8} style={{margin: "auto"}}>
 
         <DatePicker
           margin="normal"
           id="date-picker-dialog"
-          label="Date picker dialog"
+          label="Escolha a data:"
           format="dd/MM/yyyy"
           value={selectedDate}
           name="date"
@@ -157,22 +157,29 @@ const CardSchedule = ({ open, close, barber, service }) => {
           disablePast
           inputRef={register({ required: true })}
         />
-        <Select 
-          native
-          value={selectedTime}
-          onChange={handleChange}
-          name="time"
-          inputProps={{
-            name: 'time',
-            id: 'time',
-          }}
-          inputRef={register({ required: true })}
-        >
-          <option aria-label="None" value={""}/>
-          {currentDayFreeTimeSlots && currentDayFreeTimeSlots.map((slot, i) =>
-            <option key={i} value={slot}>{slot}</option>
-          )}
-        </Select>
+        <br/>
+        <FormControl>
+          <InputLabel shrink id="demo-simple-select-placeholder-label-label">
+            Escolha a hora:
+          </InputLabel>
+          <Select 
+            native
+            value={selectedTime}
+            style={{minWidth: "20vw"}}
+            onChange={handleChange}
+            name="time"
+            inputProps={{
+              name: 'time',
+              id: 'time',
+            }}
+            inputRef={register({ required: true })}
+          >
+            <option aria-label="None" value={""}/>
+            {currentDayFreeTimeSlots && currentDayFreeTimeSlots.map((slot, i) =>
+              <option key={i} value={slot}>{slot}</option>
+            )}
+          </Select>
+        </FormControl>
 
       </Grid>
     </MuiPickersUtilsProvider>

@@ -306,6 +306,7 @@ const AddBarber = ({ open, close, data }) => {
                 <Grid item xs={12} md={3} lg={3}>
                   <TimePicker
                       name="0.from"
+                      ampm={false}
                       value={scheduleInfo[0].from} 
                       onChange={(date) => setScheduleInfo([{...scheduleInfo[0], from: date }, ...scheduleInfo.slice(1)])}
                       refInput={register({ required: true })}/>
@@ -313,6 +314,7 @@ const AddBarber = ({ open, close, data }) => {
                 <Grid item xs={12} md={3} lg={3}>
                   <TimePicker
                       name="0.to"
+                      ampm={false}
                       value={scheduleInfo[0].to} 
                       onChange={(date) => setScheduleInfo([{...scheduleInfo[0], to: date }, ...scheduleInfo.slice(1)])}
                       refInput={register({ required: true })}/>
@@ -324,6 +326,7 @@ const AddBarber = ({ open, close, data }) => {
                 <Grid item xs={12} md={3} lg={3}>
                   <TimePicker
                       name="1.from"
+                      ampm={false}
                       value={scheduleInfo[1].from} 
                       onChange={(date) => setScheduleInfo([...scheduleInfo.slice(0,1), {...scheduleInfo[1], from: date }, ...scheduleInfo.slice(2)])}
                       refInput={register({ required: true })}/>
@@ -331,6 +334,7 @@ const AddBarber = ({ open, close, data }) => {
                 <Grid item xs={12} md={3} lg={3}>
                   <TimePicker
                       name="1.to"
+                      ampm={false}
                       value={scheduleInfo[1].to} 
                       onChange={(date) => setScheduleInfo([...scheduleInfo.slice(0,1), {...scheduleInfo[1], to: date }, ...scheduleInfo.slice(2)])}
                       refInput={register({ required: true })}/>
@@ -342,6 +346,7 @@ const AddBarber = ({ open, close, data }) => {
                 <Grid item xs={12} md={3} lg={3}>
                   <TimePicker
                       name="2.from"
+                      ampm={false}
                       value={scheduleInfo[2].from} 
                       onChange={(date) => setScheduleInfo([...scheduleInfo.slice(0,2), {...scheduleInfo[2], from: date }, ...scheduleInfo.slice(3)])}
                       refInput={register({ required: true })}/>
@@ -349,6 +354,7 @@ const AddBarber = ({ open, close, data }) => {
                 <Grid item xs={12} md={3} lg={3}>
                   <TimePicker
                       name="2.to"
+                      ampm={false}
                       value={scheduleInfo[2].to} 
                       onChange={(date) => setScheduleInfo([...scheduleInfo.slice(0,2), {...scheduleInfo[2], to: date }, ...scheduleInfo.slice(3)])}
                       refInput={register({ required: true })}/>
@@ -360,6 +366,7 @@ const AddBarber = ({ open, close, data }) => {
                 <Grid item xs={12} md={3} lg={3}>
                   <TimePicker
                       name="3.from"
+                      ampm={false}
                       value={scheduleInfo[3].from} 
                       onChange={(date) => setScheduleInfo([...scheduleInfo.slice(0,3), {...scheduleInfo[3], from: date }, ...scheduleInfo.slice(4)])}
                       refInput={register({ required: true })}/>
@@ -367,6 +374,7 @@ const AddBarber = ({ open, close, data }) => {
                 <Grid item xs={12} md={3} lg={3}>
                   <TimePicker
                       name="3.to"
+                      ampm={false}
                       value={scheduleInfo[3].to} 
                       onChange={(date) => setScheduleInfo([...scheduleInfo.slice(0,3), {...scheduleInfo[3], to: date }, ...scheduleInfo.slice(4)])}
                       refInput={register({ required: true })}/>
@@ -378,6 +386,7 @@ const AddBarber = ({ open, close, data }) => {
                 <Grid item xs={12} md={3} lg={3}>
                   <TimePicker
                       name="4.from"
+                      ampm={false}
                       value={scheduleInfo[4].from} 
                       onChange={(date) => setScheduleInfo([...scheduleInfo.slice(0,4), {...scheduleInfo[4], from: date }, ...scheduleInfo.slice(5)])}
                       refInput={register({ required: true })}/>
@@ -385,6 +394,7 @@ const AddBarber = ({ open, close, data }) => {
                 <Grid item xs={12} md={3} lg={3}>
                   <TimePicker
                       name="4.to"
+                      ampm={false}
                       value={scheduleInfo[4].to} 
                       onChange={(date) => setScheduleInfo([...scheduleInfo.slice(0,4), {...scheduleInfo[4], to: date }, ...scheduleInfo.slice(5)])}
                       refInput={register({ required: true })}/>
@@ -396,6 +406,7 @@ const AddBarber = ({ open, close, data }) => {
                 <Grid item xs={12} md={3} lg={3}>
                   <TimePicker
                       name="5.from"
+                      ampm={false}
                       value={scheduleInfo[5].from} 
                       onChange={(date) => setScheduleInfo([...scheduleInfo.slice(0,5), {...scheduleInfo[5], from: date }, ...scheduleInfo.slice(6)])}
                       refInput={register({ required: true })}/>
@@ -403,6 +414,7 @@ const AddBarber = ({ open, close, data }) => {
                 <Grid item xs={12} md={3} lg={3}>
                   <TimePicker
                       name="5.to"
+                      ampm={false}
                       value={scheduleInfo[5].to} 
                       onChange={(date) => setScheduleInfo([...scheduleInfo.slice(0,5), {...scheduleInfo[5], to: date }, ...scheduleInfo.slice(6)])}
                       refInput={register({ required: true })}/>
@@ -414,6 +426,7 @@ const AddBarber = ({ open, close, data }) => {
                 <Grid item xs={12} md={3} lg={3}>
                   <TimePicker
                       name="6.from"
+                      ampm={false}
                       value={scheduleInfo[6].from} 
                       onChange={(date) => setScheduleInfo([ ...scheduleInfo.slice(0,6), {...scheduleInfo[6], from: date }])}
                       refInput={register({ required: true })}/>
@@ -421,6 +434,7 @@ const AddBarber = ({ open, close, data }) => {
                 <Grid item xs={12} md={3} lg={3}>
                   <TimePicker
                       name="6.to"
+                      ampm={false}
                       value={scheduleInfo[6].to} 
                       onChange={(date) => setScheduleInfo([ ...scheduleInfo.slice(0,6), {...scheduleInfo[6], to: date }])}
                       refInput={register({ required: true })}/>

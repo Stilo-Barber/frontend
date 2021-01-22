@@ -35,6 +35,22 @@ export const Input = styled(TextField)`
   color: #a1a1a1 !important;
   margin-bottom: 15px !important;
 
+  @media(min-width: 520px) {
+    width: 50%;
+  }
+
+  @media(min-width: 768px) {
+    width: 40%;
+  }
+
+  @media(min-width: 1024px) {
+    width: 25%;
+  }
+
+  @media(min-width: 1280px) {
+    width: 20%;
+  }
+
   .MuiFormLabel-root {
     color: #a1a1a1 !important;
   }
