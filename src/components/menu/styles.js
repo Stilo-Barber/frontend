@@ -9,7 +9,7 @@ import { FiUsers } from 'react-icons/fi';
 import { MdAttachMoney } from 'react-icons/md';
 import { AiOutlineSchedule } from 'react-icons/ai';
 import { TiGroupOutline } from 'react-icons/ti';
-
+import {BiExit} from "react-icons/bi"
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { slide as Menu } from 'react-burger-menu';
 import { Link } from 'react-router-dom';
@@ -140,6 +140,10 @@ export const ServicesIcon = styled(BuildIcon)`
 `;
 
 export const AppointmentIcon = styled(NotificationsIcon)`
+  ${ICONMENU}
+`;
+
+export const LogoutIcon = styled(BiExit)`
   ${ICONMENU}
 `;
 

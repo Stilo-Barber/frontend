@@ -11,7 +11,26 @@ export const Body = styled.div`
   //height: 470px;
   height: 100%;
   padding: 10px;
+
+  &::-webkit-scrollbar {
+    width: 0px;  
+    display:none;
+    background: transparent;
+  }
 `;
+
+export const RadioDiv = styled.div`
+  max-height: calc(100vh - 100px);
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0px;  
+    display:none;
+    background: transparent;
+  }
+`;
+
+
 
 export const Title = styled.p`
   font-weight: bold;

@@ -1,7 +1,8 @@
 import React, { useState, useMemo } from "react";
-import { Body, Welcome, Services } from "./styles";
+import { Body, Welcome, Services, LogoutIcon, TopDiv } from "./styles";
 import { useSelector, useDispatch } from 'react-redux';
 import { getBarbersInRequest } from '../../store/modules/barbers/getBarbers/actions';
+import { signOut } from '../../store/modules/auth/actions';
 import CardBarber from "../../components/cardBarbers";
 import CardServices from "../../components/cardServices";
 import Loading from "../../components/loading"
@@ -26,7 +27,10 @@ const Index = () => {
 
   return (
     <Body>
-      <Welcome>Seja bem-vindo, {user.name}.</Welcome>
+      <TopDiv>
+        <Welcome>Seja bem-vindo, {user.name}.</Welcome>
+        <LogoutIcon onClick={() => dispatch(signOut(token))}/>
+      </TopDiv>
       <Services>Escolha um barbeiro:</Services>
       {barbers.loading && <Loading />}
       {!barbers.loading &&
